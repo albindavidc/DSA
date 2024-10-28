@@ -9,6 +9,7 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
+  
 
   prepend(value) {
     let node = new Node(value);
