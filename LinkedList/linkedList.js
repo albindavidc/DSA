@@ -95,10 +95,22 @@ class LinkedList {
     return length;
   }
 
-  reverseNode() {
-    if (!this.head) return;
+  //Check Cycle
+  checkCycle(){
+    if(!this.head) return;
 
-    let cu;
+    let slow = this.head;
+    let fast = this.head;
+
+    while(fast && fast.next){
+        slow = slow.next;
+        fast = fast.next.next;
+        if(fast === slow){
+            console.log("This linked list has cycle")
+            return true;
+        }
+    }
+    return false;
   }
 
   print() {
