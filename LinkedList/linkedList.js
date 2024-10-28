@@ -9,7 +9,6 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
-  
 
   prepend(value) {
     let node = new Node(value);
@@ -95,22 +94,105 @@ class LinkedList {
     return length;
   }
 
+  //Create Cycle
+  createCycle(pos) {
+    if (pos < 0) return;
+
+    let tail = this.head;
+    let loopNode = this.head;
+
+    let index = 0;
+
+    while (tail.next) {
+      if (pos === index) loopNode = tail;
+      tail = tail.next;
+      index++;
+    }
+    tail.next = loopNode;
+  }
+
   //Check Cycle
-  checkCycle(){
-    if(!this.head) return;
+  checkCycle() {
+    if (!this.head) return;
 
     let slow = this.head;
     let fast = this.head;
 
-    while(fast && fast.next){
-        slow = slow.next;
-        fast = fast.next.next;
-        if(fast === slow){
-            console.log("This linked list has cycle")
-            return true;
-        }
+    while (fast && fast.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+      if (fast === slow) {
+        console.log("This linked list has cycle");
+        return true;
+      }
     }
     return false;
+  }
+
+  //Lenght of the loop
+  checkLengthCycle() {
+    if (!this.head) return;
+
+    let slow = this.head;
+    let fast = this.head;
+
+    while (fast && fast.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+      if (slow === fast) {
+        let cycleLength = 1;
+        let curr = slow;
+
+        while (curr.next !== slow) {
+          cycleLength++;
+          curr = curr.next;
+        }
+        return cycleLength;
+      }
+    }
+  }
+
+  //Find Middle Node
+  findMiddleNodeValue(){
+    if(!this.head) return [];
+
+    let slow = this.head;
+    let fast = this.head;
+
+    let middleValues = [];
+
+    while(fast && fast.next){
+       slow = slow.next;
+       fast = fast.next.next;
+    }
+
+    if(fast === null){
+        middleValues.push(slow.value)
+        if(slow.next){
+            middleValues.push(slow.next.value)
+        }
+    }else{
+        middleValues.push(slow.value)
+    }
+
+    return middleValues;
+  }
+
+  //Merge LL
+  static mergeLL(list1, list2){
+    if(!list1.head){
+        return list2;
+    }
+    if(!list2.head){
+        return list1;
+    }
+    let list1Tail = list1.head;
+    while(list1Tail.next){
+        list1Tail = list1Tail.next
+    }
+    list1Tail.next = list2.head
+
+    return list1
   }
 
   print() {
@@ -154,18 +236,38 @@ list.prepend(78);
 list.append(35);
 list.print();
 
-list.delete(35);
+// list.delete(35);
 list.print();
+console.log(list.findMiddleNodeValue())
 
-list.insertAfter(87, 5);
-list.print();
+const list2 = new LinkedList();
+list2.append(4);
+list2.append(5);
+list2.append(6);
 
-list.append(6);
-list.print();
 
-list.removeDuplicate();
-list.print();
+const mergedList = LinkedList.mergeLL(list, list2);
 
-console.log("This is the length of the list", list.findLength());
+// Print the merged list
+mergedList.print(); // Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
 
-console.log(list.printInReverse());
+
+// list.insertAfter(87, 5);
+// list.print();
+
+// list.append(6);
+// list.print();
+
+// list.removeDuplicate();
+// list.print();
+
+// console.log("This is the length of the list", list.findLength());
+
+// console.log(list.printInReverse());
+
+// list.createCycle(1);
+
+// console.log(list.checkCycle());
+
+// console.log(list.checkLengthCycle());
+
