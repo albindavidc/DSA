@@ -129,6 +129,30 @@ class LinkedList {
     return false;
   }
 
+  //Split SLL
+  splitSingly(){
+    if(!this.head) return;
+
+    let slow = this.head;
+    let fast = this.head;
+
+    while(fast && fast.next){
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+
+    const list1 = new LinkedList()
+    list1.head = this.head;
+
+    const list2 = new LinkedList();
+    list2.head = slow.next;
+
+    slow.next = null;
+
+    return [list1, list2]
+
+  }
+
   //Lenght of the loop
   checkLengthCycle() {
     if (!this.head) return;
@@ -195,6 +219,46 @@ class LinkedList {
     return list1
   }
 
+  //Remove N-th node from the back
+  findNthFromBack(n){
+    let fast = this.head;
+    let slow = this.head;
+
+    for( let i =0; i< n; i++){
+        if(fast === null) return null;
+        fast = fast.next;
+        }
+
+        while(fast){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow ? slow.value : null;
+    }
+
+    //Rotate Linked List
+    rotateLL(n){
+        if(!this.head || !this.head.next || n===0) return ;
+
+        let length;
+        let tail = this.head;
+
+        while(tail.next){
+            tail = tail.next;
+            length++;
+        }
+
+        let newTail = this.head;
+        for(let i =0; i< length -n; i++){
+            newTail = newTail.next;
+        }
+
+        let newHead = newTail.next;
+        newTail.next = null;
+        tail.next = this.head
+        this.head = newHead;
+    }
+
   print() {
     let curr = this.head;
     let result = [];
@@ -247,10 +311,17 @@ list2.append(6);
 
 
 const mergedList = LinkedList.mergeLL(list, list2);
+mergedList.print(); 
 
-// Print the merged list
-mergedList.print(); // Output: 1 -> 2 -> 3 -> 4 -> 5 -> 6
+console.log(mergedList.findNthFromBack(7))
 
+mergedList.rotateLL(2)
+mergedList.print()
+
+
+// const [firstlist, secondlist] = mergedList.splitSingly();
+// firstlist.print();
+// secondlist.print();
 
 // list.insertAfter(87, 5);
 // list.print();

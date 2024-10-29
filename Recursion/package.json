@@ -1,0 +1,15 @@
+{
+  "name": "recursion",
+  "version": "1.0.0",
+  "main": "recursion.js",
+  "scripts": {
+    "start": "nodemon recursion.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
