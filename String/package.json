@@ -1,0 +1,15 @@
+{
+  "name": "string",
+  "version": "1.0.0",
+  "main": "string.js",
+  "scripts": {
+    "start": "nodemon string.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodmeon": "^0.0.1-security"
+  }
+}
