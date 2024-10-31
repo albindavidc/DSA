@@ -1,0 +1,15 @@
+{
+  "name": "doubly-recursion",
+  "version": "1.0.0",
+  "main": "doublyLinkedList.js",
+  "scripts": {
+    "start": "nodemon doublyLinkedList"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodmeon": "^0.0.1-security"
+  }
+}
