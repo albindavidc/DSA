@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "init": "^0.1.2",
+    "nodemon": "^3.1.7"
+  },
+  "name": "circular-queue",
+  "version": "1.0.0",
+  "main": "circularQueue.js",
+  "scripts": {
+    "start": "nodemon circularQueue.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
