@@ -1,0 +1,16 @@
+{
+  "name": "queue",
+  "version": "1.0.0",
+  "main": "queue.js",
+  "scripts": {
+    "start": "nodemon queue.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {},
+  "description": ""
+}
