@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "init": "^0.1.2",
+    "nodemon": "^3.1.7"
+  },
+  "name": "hash-tables",
+  "version": "1.0.0",
+  "main": "hashTables.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
