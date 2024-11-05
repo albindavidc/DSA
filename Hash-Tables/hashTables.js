@@ -65,6 +65,8 @@ class HashTable{
     }
 }
 
+// Time complexity O(1)
+
 const table = new HashTable(50);
 table.set("name", "Albin");
 table.set("age", 35);
