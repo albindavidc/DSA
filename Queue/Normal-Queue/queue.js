@@ -49,6 +49,46 @@ console.log(queue.dequeue());
 console.log(queue.peek());
 
 
+// //Using Function
+// var MyQueue = function() {
+//     this.items = {};
+//     this.rear = 0;
+//     this.front = 0;
+// };
+
+// /** 
+//  * @param {number} x
+//  * @return {void}
+//  */
+// MyQueue.prototype.push = function(x) {
+//     this.items[this.rear] = x;
+//     this.rear ++;
+// };
+
+// /**
+//  * @return {number}
+//  */
+// MyQueue.prototype.pop = function() {
+//     const items= this.items[this.front];
+//     delete this.items[this.front];
+//     this.front++;
+//     return items;
+// };
+
+// /**
+//  * @return {number}
+//  */
+// MyQueue.prototype.peek = function() {
+//     return this.items[this.front]
+// };
+
+// /**
+//  * @return {boolean}
+//  */
+// MyQueue.prototype.empty = function() {
+//     return this.rear - this.front === 0;
+// };
+
 
 
 
