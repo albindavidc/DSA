@@ -23,6 +23,9 @@
 // let arr = [2, 5, 4, 6, 8, 3, 2];
 // console.log(bubbleSort(arr));
 
+
+
+
 // // Insertion sort
 // function insertionSort(arr){
 //     for(let i =0; i< arr.length; i++){
@@ -38,6 +41,46 @@
 // }
 
 // console.log(insertionSort([6,3,4,2,7,8,3,4]));
+
+
+
+// // Selection sort
+// function selectionSort(arr) {
+//     for(let i =0; i<arr.length -1; i++){
+
+//         let minIndex = i;
+
+//         for(let j = i+1; j< arr.length; j++){
+//             if(arr[minIndex] > arr[j]){
+//                 minIndex = j
+//             }
+//         }
+
+//         if(minIndex !== i){
+//             let temp = arr[i]
+//             arr[i] = arr[minIndex];
+//             arr[minIndex] = temp;
+//         }
+//     }
+//     return arr;
+// }
+// console.log(selectionSort([3, 2, 6, 3, 5, 7, 4, 6]));
+
+
+// let scoreCopy = score.slice();
+
+// for(let i = 0; i<scoreCopy.length;i++){
+//     let maxIndex = i
+//     for(let j = i+ 1; j< scoreCopy.length; j++){
+//         if(scoreCopy[j] > scoreCopy[maxIndex]){
+//             maxIndex = j;
+//         }
+//     }
+//     [scoreCopy[i], scoreCopy[maxIndex]] = [scoreCopy[maxIndex], scoreCopy[i]]
+// }
+
+
+
 
 // //  Quick sort - easy and most used sorting algorithm
 // function quickSort(arr){
@@ -58,6 +101,33 @@
 // }
 
 // console.log(quickSort([6,3,5,2,6,2,7,4]))
+
+
+// function quickSort(arr, left = 0, right = arr.length - 1) {
+//     if (left < right) {
+//         const pivotIndex = partition(arr, left, right);
+//         quickSort(arr, left, pivotIndex - 1);  // Recursively sort left subarray
+//         quickSort(arr, pivotIndex + 1, right); // Recursively sort right subarray
+//     }
+//     return arr;
+// }
+
+// function partition(arr, left, right) {
+//     const pivot = arr[right];
+//     let i = left;
+//     for (let j = left; j < right; j++) {
+//         if (arr[j] < pivot) {
+//             [arr[i], arr[j]] = [arr[j], arr[i]];
+//             i++;
+//         }
+//     }
+//     [arr[i], arr[right]] = [arr[right], arr[i]];
+//     return i;
+// }
+
+
+
+
 
 // //Merge Sort - It is done using tree recursion
 // function mergeSort(arr){
@@ -85,24 +155,7 @@
 // console.log(mergeSort([2,6,3,7,3,2,1,4]))
 
 
-// // Selection sort
-// function selectionSort(arr) {
-//     for(let i =0; i<arr.length -1; i++){
 
-//         let minIndex = i;
 
-//         for(let j = i+1; j< arr.length; j++){
-//             if(arr[minIndex] > arr[j]){
-//                 minIndex = j
-//             }
-//         }
 
-//         if(minIndex !== i){
-//             let temp = arr[i]
-//             arr[i] = arr[minIndex];
-//             arr[minIndex] = temp;
-//         }
-//     }
-//     return arr;
-// }
-// console.log(selectionSort([3, 2, 6, 3, 5, 7, 4, 6]));
+
