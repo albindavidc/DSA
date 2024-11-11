@@ -1,0 +1,15 @@
+{
+  "name": "heap",
+  "version": "1.0.0",
+  "main": "heap.js",
+  "scripts": {
+    "start": "nodemon heap.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
