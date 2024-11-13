@@ -124,7 +124,9 @@ class BinarySearchTree{
             root.left = this.deleteNode(root.left, value);
         }else if(value > root.value){
             root.right = this.deleteNode(root.right, value);
-        }else{
+        }
+        
+        else{
             if(!root.left && !root.right){
                 return null;
             }
